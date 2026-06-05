@@ -1,7 +1,10 @@
+
 export default function ReportsPage() {
   return (
     <div>
-      Reports
+      <h2 className="text-2xl font-bold">
+        Reports
+      </h2>
     </div>
   );
 }
