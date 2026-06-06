@@ -1,15 +1,27 @@
 import PageHeader from "../../../components/ui/PageHeader";
 
+import ProductForm from "../components/ProductForm";
+import ProductCard from "../components/ProductCard";
+
+import { products } from "../data/products";
+
 export default function ProductsPage() {
   return (
-    <div>
+    <div className="space-y-6">
       <PageHeader
         title="Products"
-        subtitle="Manage all inventory products"
+        subtitle="Manage inventory products"
       />
 
-      <div className="bg-white border border-zinc-200 rounded-3xl p-5">
-        Product Master Coming Soon
+      <ProductForm />
+
+      <div className="space-y-4">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
       </div>
     </div>
   );
