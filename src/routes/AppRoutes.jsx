@@ -7,6 +7,14 @@ import InventoryPage from "../features/inventory/pages/InventoryPage";
 import ReportsPage from "../features/reports/pages/ReportsPage";
 import SettingsPage from "../features/settings/pages/SettingsPage";
 
+import CategoriesPage from "../features/inventory/pages/CategoriesPage";
+import UnitsPage from "../features/inventory/pages/UnitsPage";
+
+import ProductsPage from "../features/inventory/pages/ProductsPage";
+import AddStockPage from "../features/inventory/pages/AddStockPage";
+import ReleaseStockPage from "../features/inventory/pages/ReleaseStockPage";
+import CurrentStockPage from "../features/inventory/pages/CurrentStockPage";
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -19,6 +27,36 @@ export default function AppRoutes() {
         <Route
           path="/inventory"
           element={<InventoryPage />}
+        />
+
+        <Route
+          path="/inventory/categories"
+          element={<CategoriesPage />}
+        />
+
+        <Route
+          path="/inventory/units"
+          element={<UnitsPage />}
+        />
+
+        <Route
+          path="/inventory/products"
+          element={<ProductsPage />}
+        />
+
+        <Route
+          path="/inventory/add-stock"
+          element={<AddStockPage />}
+        />
+
+        <Route
+          path="/inventory/release-stock"
+          element={<ReleaseStockPage />}
+        />
+
+        <Route
+          path="/inventory/current-stock"
+          element={<CurrentStockPage />}
         />
 
         <Route
