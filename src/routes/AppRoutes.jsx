@@ -15,6 +15,11 @@ import AddStockPage from "../features/inventory/pages/AddStockPage";
 import ReleaseStockPage from "../features/inventory/pages/ReleaseStockPage";
 import CurrentStockPage from "../features/inventory/pages/CurrentStockPage";
 
+import StockLedgerPage from "../features/inventory/pages/StockLedgerPage";
+import DeadStockPage from "../features/inventory/pages/DeadStockPage";
+import StockAsOfDatePage from "../features/inventory/pages/StockAsOfDatePage";
+
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -68,6 +73,21 @@ export default function AppRoutes() {
           path="/settings"
           element={<SettingsPage />}
         />
+
+        <Route
+  path="/inventory/stock-ledger"
+  element={<StockLedgerPage />}
+/>
+
+<Route
+  path="/inventory/dead-stock"
+  element={<DeadStockPage />}
+/>
+
+<Route
+  path="/inventory/stock-as-of-date"
+  element={<StockAsOfDatePage />}
+/>
       </Route>
     </Routes>
   );
