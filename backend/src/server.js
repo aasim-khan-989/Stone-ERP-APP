@@ -4,6 +4,9 @@ const categoryRoutes = require(
   "./routes/categoryRoutes"
 );
 
+const unitRoutes =
+  require("./modules/unit/unit.routes");
+
 
 
 require("dotenv").config();
@@ -15,11 +18,15 @@ app.use(express.json());
 app.use(cors());
 app.use(
 
-    
+
   "/api/categories",
   categoryRoutes
 );
 
+app.use(
+  "/api/units",
+  unitRoutes
+);
 
 app.get("/", (req, res) => {
   res.json({
