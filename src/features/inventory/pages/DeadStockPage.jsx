@@ -7,12 +7,11 @@ import { stockOutTransactions } from "../data/stockOut";
 import { calculateDeadStock } from "../utils/deadStockCalculations";
 
 export default function DeadStockPage() {
-  const deadStockData =
-    calculateDeadStock(
-      products,
-      stockInTransactions,
-      stockOutTransactions
-    );
+  const deadStockData = calculateDeadStock(
+    products,
+    stockInTransactions,
+    stockOutTransactions
+  );
 
   return (
     <div className="space-y-6">
@@ -31,14 +30,12 @@ export default function DeadStockPage() {
           </h3>
 
           <p className="text-sm text-zinc-500 mt-2">
-            Last Movement:
-            {" "}
+            Last Movement:{" "}
             {product.lastMovement || "No Activity"}
           </p>
 
           <p className="text-sm text-zinc-500">
-            Days Since Movement:
-            {" "}
+            Days Since Movement:{" "}
             {product.daysSinceMovement ?? "-"}
           </p>
 
