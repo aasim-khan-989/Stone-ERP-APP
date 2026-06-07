@@ -1,0 +1,53 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+
+    full_name VARCHAR(255) NOT NULL,
+
+    email VARCHAR(255) UNIQUE,
+
+    role VARCHAR(50) NOT NULL DEFAULT 'staff',
+
+    status BOOLEAN NOT NULL DEFAULT TRUE,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+
+    name VARCHAR(255) NOT NULL UNIQUE,
+
+    notes TEXT,
+
+    custom_field_1 VARCHAR(255),
+
+    custom_field_2 VARCHAR(255),
+
+    status BOOLEAN NOT NULL DEFAULT TRUE,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE units (
+    id SERIAL PRIMARY KEY,
+
+    name VARCHAR(100) NOT NULL UNIQUE,
+
+    ucode VARCHAR(20),
+
+    notes TEXT,
+
+    custom_field_1 VARCHAR(255),
+
+    custom_field_2 VARCHAR(255),
+
+    status BOOLEAN NOT NULL DEFAULT TRUE,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
