@@ -3,6 +3,8 @@ const cors = require("cors");
 const categoryRoutes = require(
   "./routes/categoryRoutes"
 );
+const productRoutes =
+  require("./modules/product/product.routes");
 
 const unitRoutes =
   require("./modules/unit/unit.routes");
@@ -33,6 +35,12 @@ app.get("/", (req, res) => {
     message: "Stone ERP API Running",
   });
 });
+app.use(
+  "/api/products",
+  productRoutes
+);
+
+
 
 const PORT = process.env.PORT || 5000;
 
