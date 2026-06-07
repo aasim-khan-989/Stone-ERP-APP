@@ -3,6 +3,12 @@ const cors = require("cors");
 const categoryRoutes = require(
   "./routes/categoryRoutes"
 );
+
+const stockTransactionRoutes =
+  require(
+    "./modules/stockTransaction/stockTransaction.routes"
+  );
+
 const productRoutes =
   require("./modules/product/product.routes");
 
@@ -38,6 +44,11 @@ app.get("/", (req, res) => {
 app.use(
   "/api/products",
   productRoutes
+);
+
+app.use(
+  "/api/stock-transactions",
+  stockTransactionRoutes
 );
 
 
