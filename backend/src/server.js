@@ -15,6 +15,11 @@ const productRoutes =
 const unitRoutes =
   require("./modules/unit/unit.routes");
 
+const currentStockRoutes =
+require(
+"./modules/currentStock/currentStock.routes"
+);
+
 
 
 require("dotenv").config();
@@ -49,6 +54,11 @@ app.use(
 app.use(
   "/api/stock-transactions",
   stockTransactionRoutes
+);
+
+app.use(
+"/api/current-stock",
+currentStockRoutes
 );
 
 
