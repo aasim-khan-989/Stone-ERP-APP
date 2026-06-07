@@ -1,15 +1,35 @@
 import PageHeader from "../../../components/ui/PageHeader";
 
+import { products } from "../data/products";
+import { stockInTransactions } from "../data/stockIn";
+import { stockOutTransactions } from "../data/stockOut";
+
+import { calculateCurrentStock } from "../utils/stockCalculations";
+
+import StockSummaryCard from "../components/StockSummaryCard";
+
 export default function CurrentStockPage() {
+  const stockData =
+    calculateCurrentStock(
+      products,
+      stockInTransactions,
+      stockOutTransactions
+    );
+
   return (
-    <div>
+    <div className="space-y-6">
       <PageHeader
         title="Current Stock"
-        subtitle="View available inventory"
+        subtitle="Live inventory balance"
       />
 
-      <div className="bg-white border border-zinc-200 rounded-3xl p-5">
-        Stock Report Coming Soon
+      <div className="space-y-4">
+        {stockData.map((item) => (
+          <StockSummaryCard
+            key={item.id}
+            item={item}
+          />
+        ))}
       </div>
     </div>
   );
