@@ -12,7 +12,7 @@ import UnitsPage from "../features/inventory/pages/UnitsPage";
 
 import ProductsPage from "../features/inventory/pages/ProductsPage";
 import AddStockPage from "../features/inventory/pages/AddStockPage";
-import ReleaseStockPage from "../features/inventory/pages/ReleaseStockPage";
+import StockOutPage from "../features/inventory/pages/StockOutPage";
 import CurrentStockPage from "../features/inventory/pages/CurrentStockPage";
 
 import StockLedgerPage from "../features/inventory/pages/StockLedgerPage";
@@ -54,10 +54,10 @@ export default function AppRoutes() {
           element={<AddStockPage />}
         />
 
-        <Route
-          path="/inventory/release-stock"
-          element={<ReleaseStockPage />}
-        />
+<Route
+  path="/inventory/stock-out"
+  element={<StockOutPage />}
+/>
 
         <Route
           path="/inventory/current-stock"
