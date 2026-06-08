@@ -42,13 +42,36 @@ export default function ProductCard({
       </div>
 
       <div className="flex gap-2 mt-4">
-        <button className="flex-1 bg-black text-white py-2 rounded-xl">
-          Edit
-        </button>
+       <div className="flex justify-end gap-2 mt-4">
+  <button
+    className="
+      px-4
+      py-2
+      text-sm
+      border
+      border-zinc-300
+      rounded-lg
+      hover:bg-zinc-100
+    "
+  >
+    Edit
+  </button>
 
-        <button className="flex-1 bg-red-600 text-white py-2 rounded-xl">
-          Delete
-        </button>
+  <button
+    className="
+      px-4
+      py-2
+      text-sm
+      border
+      border-red-300
+      text-red-600
+      rounded-lg
+      hover:bg-red-50
+    "
+  >
+    Delete
+  </button>
+</div>
       </div>
     </div>
   );
