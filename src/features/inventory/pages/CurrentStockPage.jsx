@@ -1,20 +1,22 @@
 import PageHeader from "../../../components/ui/PageHeader";
 
-import { products } from "../data/products";
-import { stockInTransactions } from "../data/stockIn";
-import { stockOutTransactions } from "../data/stockOut";
-
-import { calculateCurrentStock } from "../utils/stockCalculations";
-
 import StockSummaryCard from "../components/StockSummaryCard";
 
+import useCurrentStock from "../hooks/useCurrentStock";
+
 export default function CurrentStockPage() {
-  const stockData =
-    calculateCurrentStock(
-      products,
-      stockInTransactions,
-      stockOutTransactions
+  const {
+    data,
+    loading,
+  } = useCurrentStock();
+
+  if (loading) {
+    return (
+      <div className="p-4">
+        Loading...
+      </div>
     );
+  }
 
   return (
     <div className="space-y-6">
@@ -24,7 +26,7 @@ export default function CurrentStockPage() {
       />
 
       <div className="space-y-4">
-        {stockData.map((item) => (
+        {data.map((item) => (
           <StockSummaryCard
             key={item.id}
             item={item}
