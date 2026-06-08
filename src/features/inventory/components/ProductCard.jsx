@@ -3,21 +3,41 @@ export default function ProductCard({
 }) {
   return (
     <div className="bg-white border border-zinc-200 rounded-3xl p-5 shadow-sm">
-      <h3 className="font-semibold text-lg">
-        {product.name}
-      </h3>
+      <div className="flex justify-between items-start">
+        <div>
+          <h3 className="font-semibold text-lg">
+            {product.name}
+          </h3>
 
-      <div className="mt-3 space-y-1 text-sm text-zinc-500">
+          <p className="text-sm text-zinc-500">
+            {product.pcode}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 space-y-1 text-sm text-zinc-500">
         <p>
-          Category: {product.category}
+          Category:
+          {" "}
+          {product.category_name}
         </p>
 
         <p>
-          Unit: {product.unit}
+          Unit:
+          {" "}
+          {product.unit_name}
         </p>
 
         <p>
-          Status: {product.status}
+          Brand:
+          {" "}
+          {product.brand || "-"}
+        </p>
+
+        <p>
+          Size:
+          {" "}
+          {product.size || "-"}
         </p>
       </div>
 
